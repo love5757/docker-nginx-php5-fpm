@@ -79,11 +79,11 @@ RUN rm -f /etc/nginx/sites-enabled/default
 RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default
 
 # Supervisor Config
-COPY ./supervisord.conf /etc/supervisord.conf
+#COPY ./supervisord.conf /etc/supervisord.conf
 
 # Start Supervisord
-COPY ./cmd.sh /
-RUN chmod 755 /cmd.sh
+#COPY ./cmd.sh /
+#RUN chmod 755 /cmd.sh
 
 # add test PHP file
 COPY ./index.php /usr/share/nginx/html/index.php
