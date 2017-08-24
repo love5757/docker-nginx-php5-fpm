@@ -28,7 +28,9 @@ add-apt-repository ppa:nginx/$nginx && \
 LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php && \
 apt-get update && \
 apt-get upgrade -y && \
-BUILD_PACKAGES="supervisor nginx php5.6-fpm git php5.6-mysql php-apc php5.6-curl php5.6-gd php5.6-intl php5.6-mcrypt php5.6-memcache php5.6-sqlite php5.6-tidy php5.6-xmlrpc php5.6-xsl php5.6-pgsql php5.6-mongo php5.6-ldap pwgen php5.6-cli curl" && \
+
+# none install supervisor
+BUILD_PACKAGES="nginx php5.6-fpm git php5.6-mysql php-apc php5.6-curl php5.6-gd php5.6-intl php5.6-mcrypt php5.6-memcache php5.6-sqlite php5.6-tidy php5.6-xmlrpc php5.6-xsl php5.6-pgsql php5.6-mongo php5.6-ldap pwgen php5.6-cli curl" && \
 apt-get -y install $BUILD_PACKAGES && \
 apt-get remove --purge -y software-properties-common && \
 apt-get autoremove -y && \
@@ -92,4 +94,4 @@ RUN chown -Rf www-data.www-data /usr/share/nginx/html/
 # Expose Ports
 EXPOSE 80
 
-CMD ["/bin/bash", "/cmd.sh"]
+#CMD ["/bin/bash", "/cmd.sh"]
